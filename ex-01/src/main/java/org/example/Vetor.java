@@ -91,6 +91,67 @@ public class Vetor {
         return false;
     }
 
+    public void remove(int posicao) {
+        if (posicao < 0 || posicao > this.elementos.length) {
+            throw new IllegalArgumentException("Índice inválido");
+        }
+
+        // remoção
+
+        this.elementos[posicao] = null;
+
+        // deslocamento de elementos
+        for (int i = posicao; i < this.tamanho; i++) {
+            this.elementos[i] = this.elementos[i + 1];
+
+        }
+        // Decremento do tamanho
+        this.tamanho--;
+    }
 
 
+    public boolean remove(String elemento) {
+        int pos = this.busca(elemento);
+        if (pos < 0) return false;
+        this.remove(pos);
+        return true;
+    }
+
+
+    public int indiceUltimo(String el) {
+        for (int j = this.tamanho - 1; j >= 0; j--) {
+            if (el.equals(this.elementos[j])) return j;
+        }
+
+        return -1;
+    }
+
+    public void removerTodos(String elemento) {
+        while (remove(elemento)) {}
+    }
+
+    public boolean adicionarSeNaoExiste(String elemento) {
+        if (busca(elemento) == -1) {
+            this.adicionar(elemento);
+            return true;
+        }
+
+        return false;
+    }
+
+
+    public boolean inserirDepois(String referencia, String elemento) {
+        if (this.tamanho == this.elementos.length) return false;
+        int referenciaPosicao = this.busca(referencia);
+
+        if (referenciaPosicao < 0) return false;
+
+        for (int r = this.tamanho - 1; r > referenciaPosicao; r--) {
+            this.elementos[r + 1] = this.elementos[r];
+        }
+
+        this.elementos[referenciaPosicao + 1] = elemento;
+        this.tamanho++;
+        return true;
+    }
 }
