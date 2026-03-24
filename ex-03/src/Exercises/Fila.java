@@ -1,5 +1,7 @@
 package Exercises;
 
+import java.util.Arrays;
+
 public class Fila<T> {
     protected T[] elementos;
     protected int tamanho;
@@ -13,16 +15,7 @@ public class Fila<T> {
 
     @Override
     public String toString() {
-        StringBuilder s = new StringBuilder("[");
-        for (int i = 0; i <= this.tamanho - 1; i++) {
-            if (i == this.tamanho - 1) {
-                s.append(this.elementos[i]).append("]");
-                break;
-            }
-            s.append(this.elementos[i]).append(", ");
-        }
-
-        return s.toString();
+        return Arrays.toString(this.elementos);
     }
 
     public boolean isEmpty() {

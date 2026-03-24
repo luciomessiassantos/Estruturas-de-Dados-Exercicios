@@ -67,11 +67,15 @@ public class FilaPrioridade<T> {
         StringBuilder s = new StringBuilder("[");
         for (int i = 0; i < this.tamanho; i++) {
             if (i == this.tamanho-1) {
-                s.append(this.elementos[i] + "]");
+                s.append(this.elementos[i]).append("]");
                 break;
             }
-            s.append(this.elementos[i] + ", ");
+            s.append(this.elementos[i]).append(", ");
         }
         return s.toString();
+    }
+
+    public int getTamanho() {
+        return this.tamanho;
     }
 }
