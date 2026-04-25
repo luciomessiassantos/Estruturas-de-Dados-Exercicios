@@ -1,6 +1,7 @@
 package Exercises.TestesDEF;
 
-import org.example.Vetor;
+
+import Exercises.Vetor;
 
 public class TestesE {
 

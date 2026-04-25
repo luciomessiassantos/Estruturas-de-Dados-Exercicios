@@ -6,6 +6,8 @@
       <list>
         <option value="$PROJECT_DIR$/ex-01/pom.xml" />
         <option value="$PROJECT_DIR$/ex-02/pom.xml" />
+        <option value="$PROJECT_DIR$/ex-04-Recursao/pom.xml" />
+        <option value="$PROJECT_DIR$/ex-05-Mapas/pom.xml" />
       </list>
     </option>
     <option name="ignoredFiles">
